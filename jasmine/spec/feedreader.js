@@ -32,11 +32,11 @@ $(function() {
          * and that the URL is not empty.
          */
 
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+
     });
 
 
@@ -53,6 +53,7 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
