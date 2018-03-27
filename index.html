@@ -19,19 +19,25 @@
     </head>
     <body class="menu-hidden">
         <div class="header">
+
             <a href="#" class="menu-icon-link">
+                <!-- Hamburger menu symbol -->
                 <i class="icon-list"></i>
             </a>
-
+            <!-- Title in main header bar -->
             <h1 class="header-title">Feeds</h1>
         </div>
 
+        <!-- Container for drop down menu -->
         <div class="slide-menu">
+            <!-- Drop down list items -->
             <ul class="feed-list"></ul>
         </div>
 
         <div class="feed"></div>
 
+
+        <!-- Script files -->
         <script class="tpl-entry" type="text/x-handlebars-template">
             <a class="entry-link" href="{{link}}">
                 <article class="entry">
@@ -53,5 +59,6 @@
         <script src="js/app.js"></script>
 
         <script src="jasmine/spec/feedreader.js"></script>
+        <script src="jasmine/spec/jasmineJquery.js"></script>
     </body>
 </html>
