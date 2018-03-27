@@ -31,6 +31,14 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+        for (var i = 0; i < allFeeds.length; i++) {
+            let test = allFeeds[i]['url'];
+            (function () {
+                it('URL for allFeeds[' + i + '] is not empty', function () {
+                  expect(test).not.toBe('');
+                });
+            })(allFeeds[i]);
+        };
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
