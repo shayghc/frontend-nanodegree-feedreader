@@ -96,15 +96,17 @@ $(function() {
          */
          beforeEach(function() {
             // function to check .feed container has completed loading
-            functionName (function() { // Decide which method should be called to replace functionName here
+            init(function() { // Decide which method should be called to replace functionName here
                 done();
             }) ;
          });
 
-         // Check for at least one .entry element within the .feed containerId
+         // Check for at least one .entry element within the .feed container
          it('.feed container should have at least one entry', function(done) {
-             expect(some.method).toBe(true); // Decide which method should be called to replace some.method here
-             done;
+             let entry = document.getElementsByClassName('entry'),
+                targetContent = $('entry[0].innerText');
+             expect(targetContent).not.toBe(''); // Decide which method should be called to replace some.method here
+             done();
          })
 
     });
