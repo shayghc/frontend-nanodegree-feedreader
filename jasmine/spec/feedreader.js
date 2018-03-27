@@ -35,7 +35,7 @@ $(function() {
             let test = allFeeds[i]['url'];
             (function () {
                 it('URL for allFeeds[' + i + '] is not empty', function () {
-                    expect(test).not.toBe('');
+                  expect(test).not.toBe('');
                 });
             })(allFeeds[i]);
         };
@@ -44,19 +44,21 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-        for (var i = 0; i < allFeeds.length; i++) {
-            let test = allFeeds[i]['name'];
-            (function () {
-                it('name property for allFeeds[' + i + '] is not empty', function () {
-                    expect(test).not.toBe('');
-                });
-            })(allFeeds[i]);
-        };
+         for (var i = 0; i < allFeeds.length; i++) {
+             let test = allFeeds[i]['name'];
+             (function () {
+                 it('name property for allFeeds[' + i + '] is not empty', function () {
+                   expect(test).not.toBe('');
+                 });
+             })(allFeeds[i]);
+         };
+
     });
 
 
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
+        let menuIcon = $('.menu-icon-link');
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
@@ -67,11 +69,11 @@ $(function() {
             expect(target).toBe('menu-hidden');
         });
 
-        /* TODO: Write a test that ensures the menu changes
-         * visibility when the menu icon is clicked. This test
-         * should have two expectations: does the menu display when
-         * clicked and does it hide when clicked again.
-         */
+         /* TODO: Write a test that ensures the menu changes
+          * visibility when the menu icon is clicked. This test
+          * should have two expectations: does the menu display when
+          * clicked and does it hide when clicked again.
+          */
         it('slide menu should toggle visibility "on" when the menu icon is clicked', function() {
             menuIcon.click();
             expect(document.body.className).not.toBe('menu-hidden');
@@ -81,6 +83,7 @@ $(function() {
             menuIcon.click();
             expect(document.body.className).toBe('menu-hidden');
         });
+    });
 
 
     /* TODO: Write a new test suite named "Initial Entries" */
@@ -91,7 +94,6 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-    });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
