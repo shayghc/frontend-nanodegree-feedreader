@@ -44,6 +44,14 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         for (var i = 0; i < allFeeds.length; i++) {
+             let test = allFeeds[i]['name'];
+             (function () {
+                 it('name property for allFeeds[' + i + '] is not empty', function () {
+                   expect(test).not.toBe('');
+                 });
+             })(allFeeds[i]);
+         };
 
     });
 
