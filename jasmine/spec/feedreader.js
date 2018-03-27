@@ -65,7 +65,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('slide menu element is hidden by default', function() {
-            let target = $('body').attr('class'); // ? Move to beforeEach???*****************************
+            let target = $('body').attr('class');
             expect(target).toBe('menu-hidden');
         });
 
@@ -95,20 +95,19 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach(function() {
-            // function to check .feed container has completed loading
-            init(function() { // Decide which method should be called to replace functionName here
+            // function to check .feed container has completed loading.
+            loadFeed(0, function() {
                 done();
-            }) ;
+            });
          });
 
-         // Check for at least one .entry element within the .feed container
+         // Check for at least one .entry element within the .feed container.
          it('.feed container should have at least one entry', function(done) {
              let entry = document.getElementsByClassName('entry'),
                 targetContent = $('entry[0].innerText');
-             expect(targetContent).not.toBe(''); // Decide which method should be called to replace some.method here
+             expect(targetContent).not.toBe('');
              done();
          })
-
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
