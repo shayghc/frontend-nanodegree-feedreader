@@ -94,7 +94,7 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-         beforeEach(function() {
+         beforeEach(function(done) {
             // function to check .feed container has completed loading.
             loadFeed(0, function() {
                 done();
@@ -104,7 +104,7 @@ $(function() {
          // Check for at least one .entry element within the .feed container.
          it('.feed container should have at least one entry', function(done) {
              let entry = document.getElementsByClassName('entry'),
-                targetContent = $('entry[0].innerText');
+                targetContent = entry[0].firstElementChild.innerText;
              expect(targetContent).not.toBe('');
              done();
          })
@@ -112,17 +112,31 @@ $(function() {
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
+        let entry = document.getElementsByClassName('entry'),
+            originalFeed = null,
+            newFeed = null;
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-         beforeEach(function() {
+         beforeEach(function(done) {
             // function to check .feed container has completed loading.
             loadFeed(0, function() {
+                originalFeed = entry[0].firstElementChild.innerText;
+                console.log('In first loadFeed: ' + originalFeed);
+                done();
+            });
+
+            loadFeed(1, function() {
+                newFeed = entry[0].firstElementChild.innerText;
+                console.log('In second loadFeed: ' + newFeed);
                 done();
             });
          });
 
-         // Test here
+         it('Check that content changes when a new feed is loaded', function(done) {
+             expect(newFeed).not.toEqual(originalFeed);
+             done();
+         });
     });
 }());
