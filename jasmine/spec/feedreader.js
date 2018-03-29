@@ -33,11 +33,13 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the value for the "URL" property is not empty.
          */
-        for (var i = 0; i < allFeeds.length; i++) {
+        for (let i = 0; i < allFeeds.length; i++) {
             let test = allFeeds[i]['url'];
+            let length = allFeeds[i]['url'].length;
             (function () {
                 it('URL for allFeeds[' + i + '] is not empty', function () {
                   expect(test).not.toBe('');
+                  expect(length).toBeGreaterThan(0);
                 });
             })(allFeeds[i]);
         };
@@ -46,11 +48,13 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the value for the "name" property is not empty.
          */
-         for (var i = 0; i < allFeeds.length; i++) {
+         for (let i = 0; i < allFeeds.length; i++) {
              let test = allFeeds[i]['name'];
+             let length = allFeeds[i]['name'].length;
              (function () {
                  it('name property for allFeeds[' + i + '] is not empty', function () {
                    expect(test).not.toBe('');
+                   expect(length).toBeGreaterThan(0);
                  });
              })(allFeeds[i]);
          };
