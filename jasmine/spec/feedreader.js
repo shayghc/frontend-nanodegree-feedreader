@@ -125,13 +125,11 @@ $(function() {
             // function to check .feed container has completed loading.
             loadFeed(0, function() {
                 originalFeed = entry[0].firstElementChild.innerText;
-                console.log('In first loadFeed: ' + originalFeed);
                 done();
             });
 
             loadFeed(1, function() {
                 newFeed = entry[0].firstElementChild.innerText;
-                console.log('In second loadFeed: ' + newFeed);
                 done();
             });
          });
