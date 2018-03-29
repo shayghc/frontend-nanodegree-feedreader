@@ -64,14 +64,14 @@ $(function() {
     /* "Menu" test suite */
     describe('The menu', function() {
         let menuIcon = $('.menu-icon-link');
+        let target = document.body.classList.contains('menu-hidden');
         /* This test ensures that the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
         it('slide menu element is hidden by default', function() {
-            let target = $('body').attr('class');
-            expect(target).toBe('menu-hidden');
+            expect(target).toBe(true);
         });
 
          /* This test ensures that the menu changes
@@ -79,12 +79,13 @@ $(function() {
           */
         it('slide menu should toggle visibility "on" when the menu icon is clicked', function() {
             menuIcon.click();
-            expect(document.body.className).not.toBe('menu-hidden');
+            let target = document.body.classList.contains('menu-hidden');
+            expect(target).toBe(false);
         });
 
         it('slide menu should toggle visibility "off" when the menu icon is clicked', function () {
             menuIcon.click();
-            expect(document.body.className).toBe('menu-hidden');
+            expect(target).toBe(true);
         });
     });
 
