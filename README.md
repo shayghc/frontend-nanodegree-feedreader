@@ -5,7 +5,10 @@ In this project you are given a web-based application that reads RSS feeds. The 
 
 ## How to load this project
 
-Open the index.html file in your favourite browser. The test suite is built in and will run automatically. The test results will present at the bottom of the page below the feeds.
+Open the index.html file in your favourite browser. The test suite is built-in and will run automatically. The test results will present at the bottom of the page below the feeds. The code can be found in [GitHub](https://github.com/shayghc/frontend-nanodegree-feedreader.git). 
+
+## Licence
+This code is produced with a [MIT license](https://opensource.org/licenses/MIT), which is contained in the LICENCE.txt file.
 
 
 ## Why this Project?
