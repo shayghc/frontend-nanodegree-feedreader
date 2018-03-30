@@ -79,6 +79,7 @@ $(function() {
           */
         it('slide menu should toggle visibility "on" when the menu icon is clicked', function() {
             menuIcon.click();
+            // local target declaration required to detect changed state
             let target = document.body.classList.contains('menu-hidden');
             expect(target).toBe(false);
         });
@@ -107,9 +108,8 @@ $(function() {
 
          // Check for at least one .entry element within the .feed container.
          it('.feed container should have at least one entry', function(done) {
-             let entry = document.getElementsByClassName('entry'),
-                targetContent = entry[0].firstElementChild.innerText;
-             expect(targetContent).not.toBe('');
+             let targetContent = $('.feed .entry').length;
+             expect(targetContent).toBeGreaterThan(0);
              done();
          })
     });
