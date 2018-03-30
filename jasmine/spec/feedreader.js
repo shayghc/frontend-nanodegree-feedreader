@@ -125,13 +125,16 @@ $(function() {
          beforeEach(function(done) {
             // function to check .feed container has completed loading.
             loadFeed(0, function() {
+                // Check original content of feed
                 originalFeed = entry[0].firstElementChild.innerText;
-                done();
-            });
-
-            loadFeed(1, function() {
-                newFeed = entry[0].firstElementChild.innerText;
-                done();
+                console.log('Original content in feed is: ' + originalFeed);
+                // Wait for feed 0 to finish loading
+                loadFeed(1, function() {
+                    // Check new content of feed
+                    newFeed = entry[0].firstElementChild.innerText;
+                    console.log('Changed content in feed is: ' + newFeed);
+                    done();
+                });
             });
          });
 
